@@ -1,16 +1,28 @@
 github-version-compare -- npm module to get, and to compare latest version and current version.
 ===========================================
 
-## Install
-
-```bash
-npm install --save github-version-compare
-````
-
 ## Description
 
 compare package.json version (current app version), and 
-GitHub latest release version.
+GitHub latest release tag version (latest version).
+
+## Install
+
+add repository to package.json.
+
+```json
+  {
+    "dependencies": {
++     "github-version-compare": "git+https://github.com/taku-o/github-version-compare.git"
+    }
+  }
+```
+
+and use npm instlal.
+
+```
+npm install
+````
 
 ## Usage
 
@@ -44,7 +56,7 @@ version.pull().then(function(version) {
 
 ```
 
-display electron version check dialog:
+use module for electron version check dialog:
 
 ```
 const compare = require('github-version-compare');

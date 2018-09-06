@@ -1,5 +1,5 @@
 declare namespace GithubVersionCompare {
-  export interface IVersion {
+  interface IVersion {
     latestVersion:    string;
     publishedAt:      Date;
     readonly currentVersion:   string;
@@ -10,7 +10,7 @@ declare namespace GithubVersionCompare {
     pull(): Promise<GithubVersionCompare.IVersion>;
   }
 
-  export class Version implements IVersion {
+  class Version implements IVersion {
     constructor(repository: string, packagejson: {version: string});
     latestVersion:    string;
     publishedAt:      Date;

@@ -47,3 +47,4 @@ var Version = /** @class */ (function () {
     };
     return Version;
 }());
+exports.Version = Version;

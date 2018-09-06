@@ -3,7 +3,7 @@ import * as https from 'https';
 import * as http from 'http';
 const semver = require('semver');
 
-class Version implements GithubVersionCompare.IVersion {
+export class Version implements GithubVersionCompare.IVersion {
   latestVersion: string;
   publishedAt: Date;
   currentVersion: string;
