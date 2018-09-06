@@ -13,7 +13,13 @@
     "type": "git",
     "url": "git@github.com:taku-o/github-version-compare.git"
   },
-  "keywords": [],
+  "keywords": [
+    "github",
+    "release",
+    "version",
+    "semver",
+    "check"
+  ],
   "homepage": "https://github.com/taku-o/github-version-compare",
   "bugs": {
     "url": "https://github.com/taku-o/github-version-compare/issues",

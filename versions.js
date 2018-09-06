@@ -15,7 +15,6 @@ var Version = /** @class */ (function () {
     };
     Version.prototype.pull = function () {
         var _this = this;
-        //const that = this;
         var options = {
             protocol: 'https:',
             host: 'api.github.com',

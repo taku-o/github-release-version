@@ -23,7 +23,6 @@ export class Version implements GithubVersionCompare.IVersion {
   }
 
   pull(): Promise<GithubVersionCompare.IVersion> {
-    //const that = this;
     const options: http.RequestOptions = {
       protocol: 'https:',
       host: 'api.github.com',
