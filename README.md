@@ -82,7 +82,7 @@ function showVersionDialog() {
     const btnId: number = dialog.showMessageBox(dialogOptions);
     if (btnId == 1) {
       // open release page.
-      shell.openExternal(version.latestUrl);
+      electron.shell.openExternal(version.latestUrl);
     }
   })
   .catch((err: Error) => {
