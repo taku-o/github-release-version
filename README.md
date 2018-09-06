@@ -8,20 +8,8 @@ GitHub latest release tag version (latest version).
 
 ## Install
 
-add repository to package.json.
-
-```json
-  {
-    "dependencies": {
-+     "github-version-compare": "git+https://github.com/taku-o/github-version-compare.git"
-    }
-  }
-```
-
-and use npm instlal.
-
-```
-npm install
+```bash
+npm install --save github-version-compare
 ````
 
 ## Usage
@@ -58,7 +46,7 @@ version.pull().then(function(version) {
 
 use module for electron version check dialog:
 
-```
+```js
 const compare = require('github-version-compare');
 const log = require("electron-log");
 
