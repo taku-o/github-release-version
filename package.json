@@ -2,7 +2,7 @@
   "name": "github-version-compare",
   "version": "0.1.0",
   "description": "npm module to get, and to compare latest version and current version.",
-  "main": "version.js",
+  "main": "versions.js",
   "types": "types.d.ts",
   "scripts": {
     "build": "tsc",
