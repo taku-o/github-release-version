@@ -1,0 +1,24 @@
+{
+  "name": "github-version-compare",
+  "version": "0.1.0",
+  "description": "npm module to get, and to compare latest version and current version.",
+  "types": "types.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint *.ts"
+  },
+  "keywords": [],
+  "homepage": "https://github.com/taku-o/github-version-compare",
+  "bugs": {
+    "url": "https://github.com/taku-o/github-version-compare/issues",
+    "email": "mail@nanasi.jp"
+  },
+  "author": "taku-o <mail@nanasi.jp> (http://nanasi.jp/)",
+  "license": "ISC",
+  "dependencies": {
+    "semver": "^5.5.1"
+  },
+  "devDependencies": {
+    "@types/node": "^10.9.4"
+  }
+}
