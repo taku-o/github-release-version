@@ -3,7 +3,7 @@ import * as https from 'https';
 import * as http from 'http';
 const semver = require('semver');
 
-export default class Version implements GithubReleaseVersion.IVersion {
+class Version implements GithubVersionCompare.IVersion {
   latestVersion: string;
   publishedAt: Date;
   currentVersion: string;
@@ -22,7 +22,7 @@ export default class Version implements GithubReleaseVersion.IVersion {
     return semver.gt(this.latestVersion, this.currentVersion);
   }
 
-  pull(): Promise<GithubReleaseVersion.IVersion> {
+  pull(): Promise<GithubVersionCompare.IVersion> {
     //const that = this;
     const options: http.RequestOptions = {
       protocol: 'https:',
@@ -32,7 +32,7 @@ export default class Version implements GithubReleaseVersion.IVersion {
       headers: {'User-Agent':this.userAgent},
     };
 
-    const promise = new Promise<GithubReleaseVersion.IVersion>((resolve, reject) => {
+    const promise = new Promise<GithubVersionCompare.IVersion>((resolve, reject) => {
       https.request(options, (response: http.IncomingMessage) => {
         // read api response
         let body = '';

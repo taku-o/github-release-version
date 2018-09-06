@@ -17,11 +17,12 @@ GitHub latest release version.
 As a node module:
 
 ```js
-const Version = require('github-version-compare');
-const packagejson = require('../package.json');
+const compare = require('github-version-compare');
 const repository = 'taku-o/github-version-compare';
 
-const version = new Version(repository, packagejson);
+const packagejson = require('./package.json');
+
+const version = new compare.Version(repository, packagejson);
 version.pull().then(function(version) {
   if (version.hasLatestVersion()) {
     // this version is old.
@@ -46,25 +47,27 @@ version.pull().then(function(version) {
 display electron version check dialog:
 
 ```
-const Version = require('github-version-compare');
-const packagejson = require('../package.json');
+const compare = require('github-version-compare');
+const log = require("electron-log");
+
+const packagejson = require('./package.json');
 const repository = 'taku-o/github-version-compare';
 const electron = require('electron');
 
 function showVersionDialog() {
-  const version = new Version(repository, packagejson);
+  const version = new compare.Version(repository, packagejson);
   version.pull().then(function(version) {
     const message = version.hasLatest()? 'new version is found.': 'current version is latest';
     const buttons = version.hasLatest()? ['CLOSE', 'Open Release Page']: ['OK'];
 
-    var dialogOptions = {
+    const dialogOptions = {
       type: 'info',
       title: 'application version check.',
       message: message,
       buttons: buttons,
       defaultId: 0,
     };
-    var btnId: number = dialog.showMessageBox(dialogOptions);
+    const btnId: number = dialog.showMessageBox(dialogOptions);
     if (btnId == 1) {
       // open release page.
       shell.openExternal(version.latestUrl);
